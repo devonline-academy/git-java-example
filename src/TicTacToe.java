@@ -60,13 +60,12 @@ public class TicTacToe {
     }
 
     private static void printTableMapping() {
-        System.out.println("-------------");
-        System.out.println("| 7 | 8 | 9 |");
-        System.out.println("-------------");
-        System.out.println("| 4 | 5 | 6 |");
-        System.out.println("-------------");
-        System.out.println("| 1 | 2 | 3 |");
-        System.out.println("-------------");
+        char[][] mappingTable = {
+                {'7', '8', '9'},
+                {'4', '5', '6'},
+                {'1', '2', '3'}
+        };
+        printGameTable(mappingTable);
     }
 
     private static void printGameTable(char[][] gameTable) {

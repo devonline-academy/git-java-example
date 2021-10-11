@@ -130,24 +130,28 @@ public class TicTacToe {
     }
 
     private static boolean isUserWin(char[][] gameTable) {
-        return false;
+        return isWinner(gameTable, 'X');
     }
 
     private static boolean isComputerWin(char[][] gameTable) {
+        return isWinner(gameTable, 'O');
+    }
+
+    private static boolean isWinner(char[][] gameTable, char ch) {
         for (int i = 0; i < 3; i++) {
-            if (gameTable[i][0] == gameTable[i][1] && gameTable[i][0] == gameTable[i][2] && gameTable[i][0] == 'O') {
+            if (gameTable[i][0] == gameTable[i][1] && gameTable[i][0] == gameTable[i][2] && gameTable[i][0] == ch) {
                 return true;
             }
         }
         for (int i = 0; i < 3; i++) {
-            if (gameTable[0][i] == gameTable[1][i] && gameTable[0][i] == gameTable[2][i] && gameTable[0][i] == 'O') {
+            if (gameTable[0][i] == gameTable[1][i] && gameTable[0][i] == gameTable[2][i] && gameTable[0][i] == ch) {
                 return true;
             }
         }
-        if (gameTable[0][0] == gameTable[1][1] && gameTable[0][0] == gameTable[2][2] && gameTable[0][0] == 'O') {
+        if (gameTable[0][0] == gameTable[1][1] && gameTable[0][0] == gameTable[2][2] && gameTable[0][0] == ch) {
             return true;
         }
-        if (gameTable[0][2] == gameTable[1][1] && gameTable[0][2] == gameTable[2][0] && gameTable[0][2] == 'O') {
+        if (gameTable[0][2] == gameTable[1][1] && gameTable[0][2] == gameTable[2][0] && gameTable[0][2] == ch) {
             return true;
         }
         return false;

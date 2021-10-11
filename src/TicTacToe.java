@@ -100,6 +100,22 @@ public class TicTacToe {
     }
 
     private static boolean isComputerWin(char[][] gameTable) {
+        for (int i = 0; i < 3; i++) {
+            if (gameTable[i][0] == gameTable[i][1] && gameTable[i][0] == gameTable[i][2] && gameTable[i][0] == 'O') {
+                return true;
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            if (gameTable[0][i] == gameTable[1][i] && gameTable[0][i] == gameTable[2][i] && gameTable[0][i] == 'O') {
+                return true;
+            }
+        }
+        if (gameTable[0][0] == gameTable[1][1] && gameTable[0][0] == gameTable[2][2] && gameTable[0][0] == 'O') {
+            return true;
+        }
+        if (gameTable[0][2] == gameTable[1][1] && gameTable[0][2] == gameTable[2][0] && gameTable[0][2] == 'O') {
+            return true;
+        }
         return false;
     }
 
